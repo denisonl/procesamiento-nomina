@@ -27,7 +27,7 @@ public class App {
             prop.load(input);
 
         } catch (IOException ex) {
-            System.out.println(
+            System.err.println(
                     "El archivo de configuracion config.properties no existe. Debe crearlo en la ruta src/main/resources");
             System.exit(1);
         }
@@ -42,19 +42,19 @@ public class App {
         String outputInvalidosFile = prop.getProperty("file.output.invalidos");
 
         if ((inputFile == null || inputFile.trim().isEmpty() )) {
-            System.out.println(ANSI_RED +
+            System.err.println(ANSI_RED +
                     "Debe configuar la propiedad file.input: archivo de entrada");
             System.exit(0);
         }
 
         if(outputValidosFile == null || outputValidosFile.trim().isEmpty()){
-            System.out.println(ANSI_RED +
+            System.err.println(ANSI_RED +
                     "Debe configuar la propiedad file.output.validos: archivo de salida - empleados validos");
                     System.exit(0);
         }
 
         if(outputInvalidosFile == null || outputInvalidosFile.trim().isEmpty()){
-            System.out.println(ANSI_RED +
+            System.err.println(ANSI_RED +
                     "Debe configuar la propiedad file.output.invalidos: archivo de salida - empleados invalidos");
             System.exit(0);
         }

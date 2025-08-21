@@ -86,7 +86,11 @@ public class App {
             final String ANSI_RED, String outputFile, String tipoOutputFile,ProcesaCsvService procesamientoArchivo) {
         try {
             System.out.print(ANSI_YELLOW + "Escribiendo archivo de empleados " + tipoOutputFile + ": " + ANSI_WHITE +  outputFile + " ...");
-            procesamientoArchivo.escribirArchivoCsv(outputFile, procesamientoArchivo.getValidos());
+            if(tipoOutputFile.equals("validos"))
+                procesamientoArchivo.escribirArchivoCsv(outputFile, procesamientoArchivo.getValidos());
+
+            if(tipoOutputFile.equals("invalidos"))
+                procesamientoArchivo.escribirArchivoCsv(outputFile, procesamientoArchivo.getInvalidos());
             System.out.println(ANSI_GREEN + "Ok" );
         } catch (IOException e) {
             System.err.println(ANSI_RED + "Error escribiendo archivo: " + outputFile + " " + e.getMessage());

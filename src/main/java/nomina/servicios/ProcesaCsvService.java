@@ -52,7 +52,6 @@ public class ProcesaCsvService {
                     continue;
 
                 String[] datos = linea.split(",");
-                // System.out.println(linea);
                 PersonaEmpleado e = new PersonaEmpleado(
                         datos[0].trim(),
                         datos[1].trim(),
@@ -77,7 +76,6 @@ public class ProcesaCsvService {
                             e.getNombre(), e.getApellido(), e.getRut(),
                             "ERROR: " + ex.getMessage()
                     });
-                    // System.err.println("ERROR: " + ex.getMessage());
                 }
                 linea = br.readLine();
             }

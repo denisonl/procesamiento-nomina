@@ -18,10 +18,23 @@ Aplicación en **Java 8+ con Maven** que procesa un archivo CSV de empleados, va
 file.input=src/main/resources/input/empleados.csv
 file.output.validos=src/main/resources/output/empleados_validos.csv
 file.output.invalidos=src/main/resources/output/empleados_invalidos.csv
-
 ```
+
+## Para ejecutar con maven
+```bash
+ mvn clean install
+ mvn exec:java
+ ls -l src/main/resources/output
+```
+
 ## Para ejecutar con Docker
 ```bash
 docker build -t nominas-app .
-docker run -p 8080:8080 my-java8-app
+docker run -p 8080:8080 nominas-app
+```
+
+## Ejeutando el jar con java
+```bash
+java -jar target/procesamiento-nomina-1.0-0.jar
+ls -l src/main/resources/output
 ```

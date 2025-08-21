@@ -1,20 +1,30 @@
-# Aplicacion para procesar La Nómina desde archivo CSV
+# Aplicacion para procesar la nómina desde archivo CSV
 
 ## 📌 Descripción
 Aplicación en **Java 8+ con Maven** que procesa un archivo CSV de empleados, valida la información y genera:
-- Un archivo con empleados válidos y su salario final.
+- Un archivo con empleados válidos, salario final promedio y antigüedad promedio.
 - Un archivo con registros inválidos y la causa del error.
 
 ## Estructura
 - Archivo de configuracion de rutas: `src/main/resources/config.properties`
-- Entrada: `src/main/resources/input/empleados.csv`
+- Entrada: `src/main/resources/input/archivo.csv`
 - Salida: `src/main/resources/output/`
 
-## Para ejecutar
+## Consideraciones
+- Se deben configurar la ruta de archivo de entrada y archivos de salida en `src/main/resources/config.properties`
+- A Continuacion un ejemplo:
+```
+file.input=src/main/resources/input/empleados.csv
+file.output.validos=src/main/resources/output/empleados_validos.csv
+file.output.invalidos=src/main/resources/output/empleados_invalidos.csv
+```
+## Para ejecutar con maven
 ```bash
 mvn clean install
 mvn exec:java
+```
 
-```bash 
-## Comando
+## Para ejecutar con java
+```bash
 java -jar target/procesamiento-nomina-1.0-0.jar nomina.empleados.App
+```

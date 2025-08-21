@@ -1,6 +1,5 @@
 # Built
 target/
-src/main/resources/input/*.csv
-src/main/resources/output/*.csv
+
 # VSCode
 .vscode

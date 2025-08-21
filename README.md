@@ -1,7 +1,7 @@
 # Aplicación para procesar la nómina desde archivo CSV
 
 ## 📌 Descripción
-Aplicación en **Java 8+ con Maven** que procesa un archivo CSV de empleados, valida la información y genera:
+Aplicación en **Java 8+ con Maven** que procesa un archivo CSV de empleados, valida la información y genera lo siguiente:
 - Un archivo con empleados válidos, salario final promedio y antigüedad promedio.
 - Un archivo con registros inválidos y la causa del error.
 
